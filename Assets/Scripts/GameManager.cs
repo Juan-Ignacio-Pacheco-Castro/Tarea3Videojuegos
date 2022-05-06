@@ -11,9 +11,12 @@ public class GameManager : MonoBehaviour
 
     public int Lives {set; get;}
 
+    public LevelLoader loader;
+
     void Awake(){
         if(instance == null){
             instance = this;
+            loader = FindObjectOfType(typeof(LevelLoader)) as LevelLoader;
         }
         else if (instance != this){
             Destroy(gameObject);
@@ -41,13 +44,10 @@ public class GameManager : MonoBehaviour
     }
 
     void ResetGame(){
-        /*Para esto, deberá limpiar los bloques restantes en pantalla, 
-        recargar los bloques 
-        y volver a asignarle tres vidas restantes al jugador para poder reiniciar su partida.*/
         foreach (Transform crate in CratesContainer) {
             Destroy(crate.gameObject);
         }
-        //Recargar bloques
+        loader.StartLevel();
         Start();
     }
 }

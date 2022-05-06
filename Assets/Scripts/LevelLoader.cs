@@ -16,6 +16,10 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] private float yMovement = -2f;
     void Start()
     {
+        StartLevel();
+    }
+
+    public void StartLevel() {
         string data = LoadLevel("Assets/Levels/Level1.txt");
         string [] line = data.Split('\n');
 
