@@ -31,14 +31,23 @@ public class GameManager : MonoBehaviour
     }
 
     void Update(){
-        //Debug.Log(CratesContainer.childCount);
         if(CratesContainer.childCount == 0){
             Debug.Log("Ganó :)");
         }
         if(Lives == 0){
             Debug.Log("Perdió :(");
+            ResetGame();
         }
     }
 
-
+    void ResetGame(){
+        /*Para esto, deberá limpiar los bloques restantes en pantalla, 
+        recargar los bloques 
+        y volver a asignarle tres vidas restantes al jugador para poder reiniciar su partida.*/
+        foreach (Transform crate in CratesContainer) {
+            Destroy(crate.gameObject);
+        }
+        //Recargar bloques
+        Start();
+    }
 }

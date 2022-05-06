@@ -10,13 +10,11 @@ public class Block : MonoBehaviour
     private BoxCollider2D boxCollider;
 
     public void Awake(){
-      //  particles = GetComponentInChildren<ParticleSystem>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
    
     private void OnCollisionEnter2D(Collision2D other){
-        //Debug.Log("Colisión del objeto " + other.gameObject.name + "con el bloque: " + this.gameObject.name);
         StartCoroutine(DeleteObject());
     }
 
