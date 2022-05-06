@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public int Lives {set; get;}
 
-    public LevelLoader loader;
+    private LevelLoader loader;
 
     void Awake(){
         if(instance == null){

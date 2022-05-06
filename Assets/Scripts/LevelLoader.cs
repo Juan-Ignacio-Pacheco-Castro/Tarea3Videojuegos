@@ -14,8 +14,7 @@ public class LevelLoader : MonoBehaviour
 
     [SerializeField] private float xMovement = 2f;
     [SerializeField] private float yMovement = -2f;
-    void Start()
-    {
+    void Start() {
         StartLevel();
     }
 
